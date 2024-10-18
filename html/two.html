@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <ul class = "language">
+        <li>javascript</li>
+    </ul>
 </body>
+<script>
+
+function addLang(langName){
+    const list = document.createElement('li'); //created element
+    list.innerHTML = `${langName}` // variable will go to list
+    document.querySelector('.language').appendChild(li)
+}
+
+addLang("python")
+
+
+
+</script>
 </html>
