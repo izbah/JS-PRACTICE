@@ -3,3 +3,51 @@
 //2-doesnt wait ans starts other tasks
 //depend on use cases as both can be used
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Izbah</h1>
+    <button id="name">Done</button>
+</body>
+
+<script>
+    //setTimeout is method of windows which display content after 2 minutes
+   setTimeout(function(){
+        console.log("Izbah");
+    }, 2000)
+
+    //now print izbah via giving reference to the timeout
+
+    const hiIzbah = function(){
+        console.log("Izbah");
+    } 
+
+    setTimeout(hiIzbah, 2000); //this is how we give reference,
+
+
+    // now change that izbah name after 2 minutes in h1 tag
+
+    const changeName = function(){
+        document.querySelector('h1').innerHTML = "Ghayur";
+    }
+
+    setTimeout(changeName, 2000)
+
+// here i want to stop the changing of the name 
+
+const stopChangeName = setTimeout(changeName, 2000)
+
+document.querySelector('#name').addEventListener('click', function(){
+    clearTimeout(stopChangeName)
+    console.log("STOPPED")
+})
+
+
+
+</script>
+</html>
